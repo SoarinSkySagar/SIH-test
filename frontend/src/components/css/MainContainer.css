@@ -1,0 +1,112 @@
+.maincontainer {
+    width: 100vw;
+    height: calc(100% - 45px);
+    padding-top: 15px;
+    padding-left: 250px;
+  }
+  
+  .maincontainer .left {
+    width: 80%;
+    overflow-y: scroll;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .maincontainer .left::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .maincontainer .left .cards {
+    background: #19162c;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+    height: 100px;
+    border-radius: 30px
+  }
+
+  
+  .maincontainer .left h2 {
+    font-size: 20px;
+    font-weight: 900;
+    color: #d1cfd4;
+    margin-right: 10px;
+  }
+
+  .maincontainer .details{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .maincontainer .details .det-left{
+    padding-top: 3px;
+    padding-right: 9px;
+  }
+
+  .maincontainer .details .det-cen{
+    color: aliceblue;
+    padding: 5px;
+    font-size: 18px;  
+    text-align: center;
+  }
+
+  .btn3{
+    background-color: rgb(190, 249, 229);
+    margin-bottom: 20px;
+    width: 60px;
+    height: 30px;
+    overflow: hidden;
+    color: rgb(0, 0, 0);
+    border-radius: 30px;
+    box-shadow: 0 0 0 0 rgba(143, 64, 248,0.5), 0 0 0 0 rgba(39, 200, 245, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn3::after{
+    content: "";
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: -50px;
+    left: -100px;
+    background-color: #ff3cac;
+    z-index: -1; 
+}
+
+.btn3:hover{
+    background-color: #cb92b2;  
+    cursor: pointer;
+}
+
+  @media screen and (max-width: 525px) {
+    .maincontainer {
+      flex-direction: column;
+      height: auto;
+    }
+    .maincontainer .left {
+      width: 100%;
+    }
+    .maincontainer .left .cards {
+      max-width: 325px;
+    }
+
+  }
+  
+  @media only screen and (min-width: 525px) and (max-width: 950px) {
+    .maincontainer {
+      height: calc(100% - 25px);
+    }
+    .maincontainer .left {
+      width: calc(100% - 30%);
+    }
+  
+    .maincontainer .left .cards{
+      max-width: 230px;
+      margin: 20px 5px;
+    }
+  
+    .maincontainer .left .cards{
+      padding: 0;
+    }
+
+  }
+  

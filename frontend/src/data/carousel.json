@@ -1,0 +1,28 @@
+{
+    "carousel": [
+        {
+            "caption": "A caption",
+            "image": "images/1.jpg"
+        },
+        {
+            "caption": "A caption",
+            "image": "images/1.jpg"
+        },
+        {
+            "caption": "A caption",
+            "image": "images/1.jpg"
+        },
+        {
+            "caption": "A caption",
+            "image": "images/1.jpg"
+        },
+        {
+            "caption": "A caption",
+            "image": "images/1.jpg"
+        },
+        {
+            "caption": "A caption",
+            "image": "images/1.jpg"
+        }
+    ]
+}
