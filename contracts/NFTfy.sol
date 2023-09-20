@@ -4,27 +4,33 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract NFT is ERC721, Ownable {
-    address payable public _owner;
-    mapping(uint256 => string) private imageURIs; // Store image URIs for each token
+    mapping(uint256 => string) private tokenURIs; // Store token URIs for each token
 
-    event Purchase(address owner, uint256 price, uint256 id, string uri);
+    constructor() ERC721("certificate", "CERT") {}
 
-    constructor() ERC721("certificate","certificate") {
-        _owner = payable(msg.sender);
-    }
-
-    function mint(string memory _imageURI, address _user, uint256 _uuid)
-        public
+    function mint(string memory _tokenURI, address _user, uint256 _tokenId)
+        external
         onlyOwner
-        returns (bool)
     {
-        _mint(_user, _uuid);//library function to mint nft
-        imageURIs[_uuid] = _imageURI; // Store the image URI
-        return true;
+        _mint(_user, _tokenId);
+        tokenURIs[_tokenId] = _tokenURI;
     }
 
-    function getTokenInfo(uint256 _uuid) external view returns (string memory imageURI, address ownerAddress) {
-        require(_exists(_uuid), "Token does not exist");
-        return (imageURIs[_uuid], ownerOf(_uuid));
+    function getTokenURI(uint256 _tokenId)
+        external
+        view
+        returns (string memory)
+    {
+        require(_exists(_tokenId), "Token does not exist");
+        return tokenURIs[_tokenId];
+    }
+
+    function getTokenInfo(uint256 _tokenId)
+        external
+        view
+        returns (string memory tokenURI, address ownerAddress)
+    {
+        require(_exists(_tokenId), "Token does not exist");
+        return (tokenURIs[_tokenId], ownerOf(_tokenId));
     }
 }
