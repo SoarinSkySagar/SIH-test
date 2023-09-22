@@ -17,6 +17,12 @@ function App() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  if (window.ethereum === undefined) {
+    return (
+      <div>No Wallet</div>
+    )
+  }
+
   return (
     <ChakraProvider>
       <Router>
