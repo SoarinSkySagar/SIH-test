@@ -1,8 +1,9 @@
 import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import DemoLogo from '../img/logo.png'
+import { useState } from 'react';
 
-export default function Navbar() {
+export default function Navbar({children}) {
     
     const location = useLocation();
     const nav = useNavigate();
@@ -11,6 +12,8 @@ export default function Navbar() {
             return true;
         }
     }
+
+    
 
 
     return (
@@ -26,10 +29,8 @@ export default function Navbar() {
                     <li className={`text-lg cursor-pointer py-5 font-semibold ${pathMatchRoute("/login") ? "text-blue-700 border-b-[3px] border-b-blue-700":"text-black"} `} onClick={() => nav("/login")}>Login</li>
                     <li className={`text-lg cursor-pointer py-5 font-semibold ${pathMatchRoute("/register") ? "text-blue-700 border-b-[3px] border-b-blue-700":"text-black"} `} onClick={() => nav("/register")}>Register</li>
                     <li className='text-lg cursor-pointer py-3 font-semibold'>
-                        <div className='bg-[#C6EFF1] p-2 rounded-full' onClick={() => {}}>Connect Wallet</div>
-                        window.ethereum === undefined 
-                            ? <div className='bg-[#C6EFF1] p-2 rounded-full' onClick={() => {}}>Connect Wallet</div> 
-                            : <div className='bg-[#C6EFF1] p-2 rounded-full' onClick={() => {}}>Metamask not detected</div>
+                        {/*  */}
+                        {children}
                     </li>
                 </ul>
             </div>

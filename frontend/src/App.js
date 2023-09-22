@@ -17,16 +17,31 @@ function App() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  if (window.ethereum === undefined) {
-    return (
-      <div>No Wallet</div>
-    )
-  }
+  const [selectedAddress, setSelectedAddress] = useState(undefined)
+
+    async function connectWallet() {
+        try {
+            const accounts = await window.ethereum.request({
+                method: "eth_requestAccounts"
+            })
+            setSelectedAddress(accounts[0])
+        } catch (error) {
+            console.error(error.message)
+        }
+    }
+
 
   return (
     <ChakraProvider>
       <Router>
-        <Header />
+        <Header>
+        { window.ethereum === undefined 
+          ? <div className='bg-[#C6EFF1] p-2 rounded-full' onClick={() => {}}>Metamask not detected</div> 
+          : selectedAddress === undefined
+            ? <div className='bg-[#C6EFF1] p-2 rounded-full' onClick={connectWallet}>Connect wallet</div>
+            : <div className='bg-[#C6EFF1] p-2 rounded-full' onClick={() => {}}>{selectedAddress}</div>
+        }
+        </Header>
         <div className="bg-[#C6EFF1] min-h-screen">
           <Routes>
             {isLoggedIn ? (
