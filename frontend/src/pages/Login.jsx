@@ -26,7 +26,7 @@ export default function Login() {
                     <input className='w-full mb-5' type="password" name="password" id="password" required />
                     <br/>
                     <div className='w-full text-center'>
-                        <button className="mx-auto bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded " onClick={handleButtonClick}>
+                        <button className="mx-auto bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded " onClick={Login}>
                             Submit
                         </button>
                     </div>
