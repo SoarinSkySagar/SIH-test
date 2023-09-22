@@ -10,7 +10,7 @@ export default function Login() {
     function Login({ handleLogin }) {
         const handleButtonClick = async () => {
             try {
-              const response = await axios.post('/api/login', {
+              const response = await axios.post('/auth/login', {
                 email: email,
                 password: password,
               });
@@ -26,6 +26,7 @@ export default function Login() {
               console.error('Error:', error);
               setError('An error occurred during login');
             }
+            handleLogin();
           };
           
     }
