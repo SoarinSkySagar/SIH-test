@@ -17,7 +17,7 @@ module.exports = {
     },
     matic: {
       url: "https://orbital-dawn-firefly.matic-testnet.discover.quiknode.pro/734f955117d5593846c165bbe947c74bf9711316/",
-      accounts: ["036d077b787976567641dc8fc0e19ca4f96ad3124f540f11081f675a3f442982"]
+      accounts: ["812f4d1c5cb9caf987b398b170182c497ad6a274b9f292c2f1359d0dd40e594b"]
     }
   }
 };

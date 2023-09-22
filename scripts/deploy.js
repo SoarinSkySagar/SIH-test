@@ -18,22 +18,22 @@ async function main() {
   console.log("NFT contract deployed successfully!");
 }
 
-// function saveContractFiles(contract) {
-//   const contractDir = path.join(__dirname, "..", "frontend", "src", "contracts")
+function saveContractFiles(contract) {
+  const contractDir = path.join(__dirname, "..", "frontend", "src", "contracts")
 
-//   if (!fs.existsSync(contractDir)) {
-//     fs.mkdirSync(contractDir)
-//   }
+  if (!fs.existsSync(contractDir)) {
+    fs.mkdirSync(contractDir)
+  }
 
-//   fs.writeFileSync(
-//     path.join(contractDirn `contract-address-${network.name}.json`),
-//     JSON.stringify({NFT: contract.address}, null, 2)
-//   )
+  fs.writeFileSync(
+    path.join(contractDirn `contract-address-${network.name}.json`),
+    JSON.stringify({NFT: contract.address}, null, 2)
+  )
 
-//   {
-//     "NFT": ""
-//   }
-// }
+  {
+    "NFT"; "0xc0Fc2e4013Fe3e9ebC0D33A0D8798e69fC0cB62C"
+  }
+}
 
 // Execute the deployment script
 main()
