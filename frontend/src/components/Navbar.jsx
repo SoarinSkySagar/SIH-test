@@ -12,6 +12,7 @@ export default function Navbar() {
         }
     }
 
+
     return (
         <div className='bg-white border-b shadow-sm sticky top-0 z-50'>
             <header className='flex justify-between items-center px-3 mx-auto max-w-full'>
@@ -26,6 +27,9 @@ export default function Navbar() {
                     <li className={`text-lg cursor-pointer py-5 font-semibold ${pathMatchRoute("/register") ? "text-blue-700 border-b-[3px] border-b-blue-700":"text-black"} `} onClick={() => nav("/register")}>Register</li>
                     <li className='text-lg cursor-pointer py-3 font-semibold'>
                         <div className='bg-[#C6EFF1] p-2 rounded-full' onClick={() => {}}>Connect Wallet</div>
+                        window.ethereum === undefined 
+                            ? <div className='bg-[#C6EFF1] p-2 rounded-full' onClick={() => {}}>Connect Wallet</div> 
+                            : <div className='bg-[#C6EFF1] p-2 rounded-full' onClick={() => {}}>Metamask not detected</div>
                     </li>
                 </ul>
             </div>
