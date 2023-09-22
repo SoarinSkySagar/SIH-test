@@ -27,12 +27,17 @@ function saveContractFiles(contract) {
 
   fs.writeFileSync(
     path.join(contractDirn `contract-address-${network.name}.json`),
-    JSON.stringify({NFT: contract.address}, null, 2)
+    JSON.stringify({"NFT": "0xc0Fc2e4013Fe3e9ebC0D33A0D8798e69fC0cB62C"}, null, 2)
   )
 
-  {
-    "NFT"; "0xc0Fc2e4013Fe3e9ebC0D33A0D8798e69fC0cB62C"
-  }
+  const NftArtifact = artifacts.readArtifactSync("NFT")
+
+  fs.writeFileSync(
+    path.join(contractDir, "NFT.json"),
+    JSON.stringify(NftArtifact, null, 2)
+  )
+
+
 }
 
 // Execute the deployment script
