@@ -25,7 +25,10 @@ export default function Register() {
   const handleRegistration = async () => {
     try {
       // Determine the endpoint based on the activeTab
-      const endpoint = activeTab === 'user' ? '/auth/user/register' : '/auth/org/register';
+      const endpoint =
+        activeTab === 'user'
+          ? 'http://localhost:5600/auth/user/register'
+          : 'http://localhost:5600/auth/org/register';
 
       // Send the registration data to the server using Axios
       const response = await axios.post(endpoint, formData);
@@ -61,70 +64,137 @@ export default function Register() {
         </div>
         {activeTab === 'organization' ? (
           <div>
-          <form action="">
-              <label htmlFor="name">Organization Name</label>
-              <br/>
-              <input className='w-full mb-5' type="text" name="name" id="name" required />
-              <br/>
-              <label htmlFor="email">Organization Email</label>
-              <br/>
-              <input className='w-full mb-5' type="email" name="email" id="email" required />
-              <br/>
-              <label htmlFor="url">Organization Website</label>
-              <br/>
-              <input className='w-full mb-5' type="url" name="url" id="url" required />
-              <br/>
-              <label htmlFor="password">Enter password</label>
-              <br/>
-              <input className='w-full mb-5' type="password" name="password" id="password" required />
-              <br/>
-              <label htmlFor="confirmPassword">Confirm password</label>
-              <br/>
-              <input className='w-full mb-5' type="password" name="confirmPassword" id="confirmPassword" required />
-              <br/>
-              <div className='w-full text-center'>
-                  <button className="mx-auto bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "
-                  onClick={handleRegistration}
-                  >
-                      Sign up as Organization
-                  </button>
-              </div>
-          </form>
-      </div>
+            <label htmlFor="name">Organization Name</label>
+            <br />
+            <input
+              className="w-full mb-5"
+              type="text"
+              name="name"
+              id="name"
+              onChange={handleInputChange}
+              value={formData.name}
+              required
+            />
+            <br />
+            <label htmlFor="email">Organization Email</label>
+            <br />
+            <input
+              className="w-full mb-5"
+              type="email"
+              name="email"
+              id="email"
+              onChange={handleInputChange}
+              value={formData.email}
+              required
+            />
+            <br />
+            <label htmlFor="password">Enter password</label>
+            <br />
+            <input
+              className="w-full mb-5"
+              type="password"
+              name="password"
+              id="password"
+              onChange={handleInputChange}
+              value={formData.password}
+              required
+            />
+            <br />
+            <label htmlFor="confirmPassword">Confirm password</label>
+            <br />
+            <input
+              className="w-full mb-5"
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+              onChange={handleInputChange}
+              value={formData.confirmPassword}
+              required
+            />
+            <br />
+            <div className="w-full text-center">
+  <button
+    className="mx-auto bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    onClick={handleRegistration} // Call handleRegistration when clicked
+    type="button"
+  >
+    Sign up as Organization
+  </button>
+</div>
+          </div>
         ) : (
-            <div>
-            <form action="">
-                <label htmlFor="name">Enter name</label>
-                <br/>
-                <input className='w-full mb-5' type="text" name="name" id="name" required />
-                <br/>
-                <label htmlFor="email">Enter email</label>
-                <br/>
-                <input className='w-full mb-5' type="email" name="email" id="email" required />
-                <br/>
-                <label htmlFor="phone">Enter Phone</label>
-                <br/>
-                <input className='w-full mb-5' type="tel" name="phone" id="phone" required />
-                <br/>
-                <label htmlFor="password">Enter password</label>
-                <br/>
-                <input className='w-full mb-5' type="password" name="password" id="password" required />
-                <br/>
-                <label htmlFor="confirmPassword">Confirm password</label>
-                <br/>
-                <input className='w-full mb-5' type="password" name="confirmPassword" id="confirmPassword" required />
-                <br/>
-                <div className='w-full text-center'>
-                    <button className="mx-auto bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "
-                    onClick={handleRegistration}
-                    >
-                        Sign up as User
-                    </button>
-                </div>
-            </form>
-        </div>
+          <div>
+            <label htmlFor="name">Enter name</label>
+            <br />
+            <input
+              className="w-full mb-5"
+              type="text"
+              name="name"
+              id="name"
+              onChange={handleInputChange}
+              value={formData.name}
+              required
+            />
+            <br />
+            <label htmlFor="email">Enter email</label>
+            <br />
+            <input
+              className="w-full mb-5"
+              type="email"
+              name="email"
+              id="email"
+              onChange={handleInputChange}
+              value={formData.email}
+              required
+            />
+            <br />
+            <label htmlFor="phone">Enter Phone</label>
+            <br />
+            <input
+              className="w-full mb-5"
+              type="tel"
+              name="phone"
+              id="phone"
+              onChange={handleInputChange}
+              value={formData.phone}
+              required
+            />
+            <br />
+            <label htmlFor="password">Enter password</label>
+            <br />
+            <input
+              className="w-full mb-5"
+              type="password"
+              name="password"
+              id="password"
+              onChange={handleInputChange}
+              value={formData.password}
+              required
+            />
+            <br />
+            <label htmlFor="confirmPassword">Confirm password</label>
+            <br />
+            <input
+              className="w-full mb-5"
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+              onChange={handleInputChange}
+              value={formData.confirmPassword}
+              required
+            />
+            <br />
+            <div className="w-full text-center">
+  <button
+    className="mx-auto bg-blue-500 hover.bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    onClick={handleRegistration} // Call handleRegistration when clicked
+    type="button"
+  >
+    Sign up as User
+  </button>
+</div>
+          </div>
         )}
-        
       </div>
     </div>
   );

@@ -11,6 +11,7 @@ import Generate from "./pages/Generate";
 import { useState } from "react";
 
 function App() {
+  
   const handleLogin = () => {
     setIsLoggedIn(true);
   };
