@@ -14,6 +14,10 @@ module.exports = {
       accounts: {
         mnemonic: "start company two upgrade asthma lemon borrow hurt pitch rely what endorse"
       }
+    },
+    matic: {
+      url: "https://orbital-dawn-firefly.matic-testnet.discover.quiknode.pro/734f955117d5593846c165bbe947c74bf9711316/",
+      accounts: ["036d077b787976567641dc8fc0e19ca4f96ad3124f540f11081f675a3f442982"]
     }
   }
 };

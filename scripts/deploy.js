@@ -11,12 +11,29 @@ async function main() {
   const nft = await NFT.deploy();
   const address = await nft.address
 
-  console.log("NFT contract address:", await nft.address);
+  console.log("NFT contract address:", address);
 
   // Wait for the contract to be mined
 
   console.log("NFT contract deployed successfully!");
 }
+
+// function saveContractFiles(contract) {
+//   const contractDir = path.join(__dirname, "..", "frontend", "src", "contracts")
+
+//   if (!fs.existsSync(contractDir)) {
+//     fs.mkdirSync(contractDir)
+//   }
+
+//   fs.writeFileSync(
+//     path.join(contractDirn `contract-address-${network.name}.json`),
+//     JSON.stringify({NFT: contract.address}, null, 2)
+//   )
+
+//   {
+//     "NFT": ""
+//   }
+// }
 
 // Execute the deployment script
 main()

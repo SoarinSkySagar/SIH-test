@@ -10,6 +10,8 @@ import Certificate from "./pages/Certificate";
 import Generate from "./pages/Generate";
 import { useState } from "react";
 
+// const POLYGON_MUMBAI_ID = 80001;
+
 function App() {
   const handleLogin = () => {
     setIsLoggedIn(true);
@@ -25,10 +27,15 @@ function App() {
                 method: "eth_requestAccounts"
             })
             setSelectedAddress(accounts[0])
+            setNetId(window.ethereum.networkVersion)
         } catch (error) {
             console.error(error.message)
         }
     }
+
+    const [netId, setNetId] = useState(
+      window.ethereum.networkVersion
+    )
 
 
   return (
@@ -39,7 +46,8 @@ function App() {
           ? <div className='bg-[#C6EFF1] p-2 rounded-full' onClick={() => {}}>Metamask not detected</div> 
           : selectedAddress === undefined
             ? <div className='bg-[#C6EFF1] p-2 rounded-full' onClick={connectWallet}>Connect wallet</div>
-            : <div className='bg-[#C6EFF1] p-2 rounded-full' onClick={() => {}}>{selectedAddress}</div>
+            :  <div className='bg-[#C6EFF1] p-2 rounded-full' onClick={() => {}}>{selectedAddress}</div>
+              
         }
         </Header>
         <div className="bg-[#C6EFF1] min-h-screen">
