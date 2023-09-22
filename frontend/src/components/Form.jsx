@@ -24,7 +24,7 @@
         
             try {
               // Send the form data to the server using Axios
-              const response = await axios.post('/api/your-backend-endpoint', formData);
+              const response = await axios.post('/org/certificate', formData);
         
               // Handle the response from the server as needed
               console.log('Server response:', response.data);
