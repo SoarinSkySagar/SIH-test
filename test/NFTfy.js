@@ -23,7 +23,7 @@ describe("NFT Contract", function () {
     const tokenURI = "https://example.com/token/1"; // Example token URI
 
     // Mint a new NFT
-    await nft.connect(owner).mint(tokenURI, user1.address, tokenId);
+    const result =await nft.connect(owner).mint(tokenURI, user1.address, tokenId);
 
     // Check owner of the token
     const ownerOfToken = await nft.ownerOf(tokenId);
