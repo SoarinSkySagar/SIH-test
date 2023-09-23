@@ -9,14 +9,10 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Certificate from "./pages/Certificate";
 import Generate from "./pages/Generate";
-<<<<<<< HEAD
-import ContactForm from "./components/ContactForm";
-=======
 import { useState } from "react";
 const ethers = require('ethers');
 
 // const POLYGON_MUMBAI_ID = 80001;
->>>>>>> b8a9a69e024cd13d84f41d58dff614899a139294
 
 function App() {
   
@@ -34,19 +30,7 @@ function App() {
               
         </Header>
         <div className="bg-[#C6EFF1] min-h-screen">
-<<<<<<< HEAD
-        <Routes>
-          <Route path="/" element={<Home/>}/>  
-          <Route path="/login" element={<Login/>}/>  
-          <Route path="/register" element={<Register/>}/>  
-          <Route path = "/home" element={<Dashboard/>}/>    
-          <Route path = "/contact" element={<ContactForm/>}/>   
-          <Route path = "/about" element={<About/>}/>   
-          <Route path = "/certificate" element={<Certificate/>}/>   
-          <Route path = "/search" element={<div>Search</div>}/>  
-          <Route path = "/generate" element={<Generate/>}/>   
-        </Routes>
-=======
+
           <Routes>
             {isLoggedIn ? (
               <>
@@ -68,7 +52,6 @@ function App() {
               </>
             )}
           </Routes>
->>>>>>> b8a9a69e024cd13d84f41d58dff614899a139294
         </div>
         <Footer />
       </Router>
