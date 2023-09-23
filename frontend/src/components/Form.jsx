@@ -16,7 +16,7 @@ const Form = () => {
           const signer = provider.getSigner();
     
           const contractAddress = '0xd0cF5bBD3392566356c20dd4dd0A0DD2D1dC24BD';
-          const contract = new ethers.Contract(contractAddress, NFTContract.abi, signer);
+          const contract = new ethers.Contract(contractAddress, NFTContract, signer);
     
           // Check if the contract is properly initialized
           if (contract) {
@@ -48,9 +48,11 @@ const Form = () => {
         console.error('NFT contract is not initialized.');
         return;
       }
+      const tokenURI = 'https://example.com/nft-metadata.json'; // Replace with your metadata URL
+      const tokenId = 1;
   
       // Call the mint function on your contract
-      const tx = await nftContract.mint(tokenURI, account, tokenURI);
+      const tx = await nftContract.mint(tokenURI, 0xd0cF5bBD3392566356c20dd4dd0A0DD2D1dC24BD, tokenId);
   
       // Wait for the transaction to be mined
       await tx.wait();
@@ -81,6 +83,22 @@ const Form = () => {
     });
   };
 
+  const issueCertificate = async () => {
+    try {
+      // Determine the endpoint based on the activeTab
+      const endpoint ='http://localhost:5600/auth/org/register';
+
+      // Send the registration data to the server using Axios
+      const response = await axios.post(endpoint, formData);
+
+      // Handle the response from the server as needed
+      console.log('Server response:', response.data);
+    } catch (error) {
+      // Handle any errors that occur during the request
+      console.error('Error:', error);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -98,7 +116,7 @@ const Form = () => {
       const userDataJSON = JSON.stringify(userData);
 
       // Call the handleMintNFT function with userDataJSON as tokenURI
-      handleMintNFT(userDataJSON);
+      //handleMintNFT(userDataJSON);
     } catch (error) {
       // Handle any errors that occur during the request
       console.error('Error:', error);
@@ -107,11 +125,11 @@ const Form = () => {
 
   return (
     <div className='form'>
-      <h1 className='ml-5'>Generate Certificate</h1>
+      <h1 className='ml-6'>Generate Certificate</h1>
       <form onSubmit={handleSubmit}>
         <div className='main-container'>
           <div className='card'>
-            <h3>NAME OF ORGANISATION</h3>
+            <h3>NAME OF<br></br> ORGANISATION</h3>
             <input
               type='text'
               placeholder='Name Of Organisation'
@@ -121,7 +139,7 @@ const Form = () => {
             />
           </div>
           <div className='card'>
-            <h3>NAME OF USER</h3>
+            <h3>NAME OF <br></br>USER</h3>
             <input
               type='text'
               placeholder='Name'
@@ -131,7 +149,7 @@ const Form = () => {
             />
           </div>
           <div className='card'>
-            <h3>Email address</h3>
+            <h3>EMAIL</h3>
             <input
               type='email'
               placeholder='Email'
@@ -142,11 +160,32 @@ const Form = () => {
           </div>
 
           <div className='card'>
-            <button type='submit' className='btnS2'>
+            <h3>WALLET <br></br>ADDRESS</h3>
+            <input
+              type='text'
+              placeholder='Name Of Organisation'
+              name='orgname'
+              value={formData.orgname}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className='card'>
+            <h3>MESSAGE</h3>
+            <input
+              type='text'
+              placeholder='Name Of Organisation'
+              name='orgname'
+              value={formData.orgname}
+              onChange={handleInputChange}
+            />
+          </div>
+
+          <div className='card'>
+            <button type='submit' className='btnS2' onClick={issueCertificate}>
               Issue Certificate
             </button>
 
-            <button type='button' className='btnS2' onClick={handleMintNFT.bind()}>
+            <button type='button' className='btnS2' onClick={handleMintNFT}>
               Generate NFT
             </button>
           </div>

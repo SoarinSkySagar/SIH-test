@@ -11,7 +11,6 @@ import Generate from "./pages/Generate";
 import { useState, useEffect } from "react";
 import {ethers} from "ethers";
 import abi from "./abi.json";
-import Contact from "./pages/Contact";
 // const POLYGON_MUMBAI_ID = 80001;
 
 function App() {
@@ -77,6 +76,7 @@ function App() {
             {isLoggedIn ? (
               <>
                 <Route path="/" element={<Dashboard />} />
+                <Route path="/about" element={<div>About</div>} />
                 <Route path="/certificate" element={<Certificate />} />
                 <Route path="/search" element={<div>Search</div>} />
                 <Route path="/generate" element={<Generate />} />
@@ -84,8 +84,6 @@ function App() {
             ) : (
               <>
                 <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About/>} />
-                <Route path="/about" element={<Contact/>} />
                 {/* Pass handleLogin function to Login component */}
                 <Route
                   path="/login"

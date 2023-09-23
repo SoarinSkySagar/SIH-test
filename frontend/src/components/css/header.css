@@ -2,15 +2,21 @@
     padding-top: 20px;
     margin-left: 15vw;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
 }
 
+.welcome h1{
+    margin-left: 30px;
+}
 .line1{
-    font-size: 20px;
+    margin-top: -50px;
+    font-size: 25px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
 
 .info{
+    color: rgb(169, 78, 12);
     margin-top: 60px;
 font-family: Arial, Helvetica, sans-serif;    
 }
