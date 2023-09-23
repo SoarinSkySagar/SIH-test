@@ -31,20 +31,20 @@ function MainContainer() {
               <img className="cer1" src={cer1} alt="cer1" width={100} />
             </div>
             <div className="det-cen">
-              Academic Bank of Credits <br></br>
-              Mon 28 Aug 2023 <br></br> 12:37:59 IST
+              Khan Academy <br></br>
+              Sat 23 Sept 2023 <br></br> 2:45:50 IST
             </div>
             <div className="det-right">
               {/* Add routes to the two buttons */}
               <Link to=''>
                 <button type="button" className="btn3">
-                  View Certificate 1
+                  View 
                 </button>
               </Link>
               <br></br>
               <Link to="/view-certificate/certificate-2">
                 <button type="button" className="btn3">
-                  View Certificate 2
+                  Verify
                 </button>
               </Link>
             </div>
