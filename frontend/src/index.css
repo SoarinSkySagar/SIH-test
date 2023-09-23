@@ -11,6 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -ms-overflow-style: none; 
   scrollbar-width: none;
+  padding: 40px;
 }
 
 body::-webkit-scrollbar {
