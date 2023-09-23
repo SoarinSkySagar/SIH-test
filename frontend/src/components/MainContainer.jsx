@@ -32,7 +32,7 @@ function MainContainer() {
             </div>
             <div className="det-cen">
               Khan Academy <br></br>
-              Sat 23 Sept 2023 <br></br> 2:45:50 IST
+              Sat 23 Sept 2023 <br></br>
             </div>
             <div className="det-right">
               {/* Add routes to the two buttons */}
