@@ -161,7 +161,7 @@ const Form = () => {
             <h3>WALLET <br></br>ADDRESS</h3>
             <input
               type='text'
-              placeholder='Name Of Organisation'
+              placeholder='Wallet Address'
               name='address'
               value={formData.address}
               onChange={handleInputChange}
@@ -171,7 +171,7 @@ const Form = () => {
             <h3>MESSAGE</h3>
             <input
               type='text'
-              placeholder='Name Of Organisation'
+              placeholder='Message'
               name='message'
               value={formData.message}
               onChange={handleInputChange}
