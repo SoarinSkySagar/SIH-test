@@ -9,6 +9,7 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Certificate from "./pages/Certificate";
 import Generate from "./pages/Generate";
+import Contact from "./pages/Contact.jsx";
 import { useState } from "react";
 const ethers = require('ethers');
 
@@ -35,7 +36,6 @@ function App() {
             {isLoggedIn ? (
               <>
                 <Route path="/" element={<Dashboard />} />
-                <Route path="/about" element={<div>About</div>} />
                 <Route path="/certificate" element={<Certificate />} />
                 <Route path="/search" element={<div>Search</div>} />
                 <Route path="/generate" element={<Generate />} />
@@ -43,6 +43,8 @@ function App() {
             ) : (
               <>
                 <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About/>} />
+                <Route path="/contact" element={<Contact/>}/>
                 {/* Pass handleLogin function to Login component */}
                 <Route
                   path="/login"

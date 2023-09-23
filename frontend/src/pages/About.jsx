@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-const About = () => {
+export default function About() {
   return (
     <div className="bg-blue-200 p-10 flex flex-col items-center">
       <div className="text-center">
@@ -41,7 +41,5 @@ Join us on this exciting journey as we revolutionize the way certificates are ge
         <li>Sustainability</li>
       </ul>
     </div>
-  );
-};
-
-export default About;
+  )
+}
