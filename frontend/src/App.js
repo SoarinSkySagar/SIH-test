@@ -11,6 +11,8 @@ import Generate from "./pages/Generate";
 import { useState, useEffect } from "react";
 import {ethers} from "ethers";
 import abi from "./abi.json";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 // const POLYGON_MUMBAI_ID = 80001;
 
 function App() {
@@ -68,7 +70,7 @@ function App() {
     <ChakraProvider>
       <Router>
         <Header>
-            <div className='bg-[#C6EFF1] p-2 rounded-full'>0xd...24BD</div>
+            <div className='bg-[#C6EFF1] p-2 rounded-full'>Connect wallet</div>
               
         </Header>
         <div className="bg-[#C6EFF1] min-h-screen">
@@ -76,7 +78,6 @@ function App() {
             {isLoggedIn ? (
               <>
                 <Route path="/" element={<Dashboard />} />
-                <Route path="/about" element={<div>About</div>} />
                 <Route path="/certificate" element={<Certificate />} />
                 <Route path="/search" element={<div>Search</div>} />
                 <Route path="/generate" element={<Generate />} />
@@ -86,6 +87,9 @@ function App() {
             ) : (
               <>
                 <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About/>} />
+                <Route path="/contact" element={<Contact/>} />
+
                 {/* Pass handleLogin function to Login component */}
                 <Route
                   path="/login"

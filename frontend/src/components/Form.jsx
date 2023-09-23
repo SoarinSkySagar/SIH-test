@@ -70,9 +70,8 @@ const Form = () => {
   const [formData, setFormData] = useState({
     name: '',
     orgname: '',
-    date: '',
-    walletAddress: '',
-    email: '',
+    message: '',
+    address: ''
   });
 
   const handleInputChange = (e) => {
@@ -107,9 +106,8 @@ const Form = () => {
       const userData = {
         name: formData.name,
         orgname: formData.orgname,
-        date: formData.date,
-        walletAddress: formData.walletAddress,
-        email: formData.email,
+        address: formData.address,
+        message: formData.message
       };
 
       // Convert the user data to a JSON string
@@ -164,8 +162,8 @@ const Form = () => {
             <input
               type='text'
               placeholder='Name Of Organisation'
-              name='orgname'
-              value={formData.orgname}
+              name='address'
+              value={formData.address}
               onChange={handleInputChange}
             />
           </div>
@@ -174,8 +172,8 @@ const Form = () => {
             <input
               type='text'
               placeholder='Name Of Organisation'
-              name='orgname'
-              value={formData.orgname}
+              name='message'
+              value={formData.message}
               onChange={handleInputChange}
             />
           </div>
