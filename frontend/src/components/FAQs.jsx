@@ -18,7 +18,7 @@ export default function FAQs() {
                     <h2 className='bg-white rounded-lg mb-1'>
                         <AccordionButton>
                             <Box as="span" flex='1' textAlign='left'>
-                                <h2 className='text-3xl font-semibold'>1. What is blockchain-based certificate generation and validation?</h2>
+                                <h2 className='text-2xl font-semibold'>1. What is blockchain-based certificate generation and validation?</h2>
                             </Box>
                             <AccordionIcon />
                         </AccordionButton>
@@ -34,7 +34,7 @@ export default function FAQs() {
                     <h2 className='bg-white rounded-lg mb-1'>
                         <AccordionButton>
                             <Box as="span" flex='1' textAlign='left'>
-                                <h2 className='text-3xl font-semibold'>2. Is my personal information safe when using your platform?</h2>
+                                <h2 className='text-2xl font-semibold'>2. Is my personal information safe when using your platform?</h2>
                             </Box>
                             <AccordionIcon />
                         </AccordionButton>
@@ -49,7 +49,7 @@ export default function FAQs() {
                     <h2 className='bg-white rounded-lg mb-1'>
                         <AccordionButton>
                             <Box as="span" flex='1' textAlign='left'>
-                                <h2 className='text-3xl font-semibold'>3. What types of certificates can I generate using your platform?</h2>
+                                <h2 className='text-2xl font-semibold'>3. What types of certificates can I generate using your platform?</h2>
                             </Box>
                             <AccordionIcon />
                         </AccordionButton>
@@ -64,7 +64,7 @@ export default function FAQs() {
                     <h2 className='bg-white rounded-lg mb-1'>
                         <AccordionButton>
                             <Box as="span" flex='1' textAlign='left'>
-                                <h2 className='text-3xl font-semibold'>4. Can I transfer or share my blockchain-based certificates easily?</h2>
+                                <h2 className='text-2xl font-semibold'>4. Can I transfer or share my blockchain-based certificates easily?</h2>
                             </Box>
                             <AccordionIcon />
                         </AccordionButton>
@@ -79,7 +79,7 @@ export default function FAQs() {
                     <h2 className='bg-white rounded-lg mb-1'>
                         <AccordionButton>
                             <Box as="span" flex='1' textAlign='left'>
-                                <h2 className='text-3xl font-semibold'>5. Are these blockchain-based certificates recognized by institutions and employers?</h2>
+                                <h2 className='text-2xl font-semibold'>5. Are these blockchain-based certificates recognized by institutions and employers?</h2>
                             </Box>
                             <AccordionIcon />
                         </AccordionButton>
@@ -94,7 +94,7 @@ export default function FAQs() {
                     <h2 className='bg-white rounded-lg mb-1'>
                         <AccordionButton>
                             <Box as="span" flex='1' textAlign='left'>
-                                <h2 className='text-3xl font-semibold'>6. How can I contact your support team if I have additional questions or issues?</h2>
+                                <h2 className='text-2xl font-semibold'>6. How can I contact your support team if I have additional questions or issues?</h2>
                             </Box>
                             <AccordionIcon />
                         </AccordionButton>
@@ -109,7 +109,7 @@ export default function FAQs() {
                     <h2 className='bg-white rounded-lg mb-1'>
                         <AccordionButton>
                             <Box as="span" flex='1' textAlign='left'>
-                                <h2 className='text-3xl font-semibold'>7. What makes your platform different from traditional certificate issuance methods?</h2>
+                                <h2 className='text-2xl font-semibold'>7. What makes your platform different from traditional certificate issuance methods?</h2>
                             </Box>
                             <AccordionIcon />
                         </AccordionButton>

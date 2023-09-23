@@ -25,7 +25,7 @@
       };
     
       return (
-        <div className="max-w-md mx-auto mt-8 p-4">
+        <div className="max-w-md mx-auto  p-4">
           <h1 className="text-2xl font-semibold mb-4">Contact Us</h1>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="flex flex-col">

@@ -2,27 +2,19 @@
     "carousel": [
         {
             "caption": "A caption",
-            "image": "images/1.jpg"
+            "image": "images/1.png"
         },
         {
             "caption": "A caption",
-            "image": "images/1.jpg"
+            "image": "images/2.png"
         },
         {
             "caption": "A caption",
-            "image": "images/1.jpg"
+            "image": "images/3.png"
         },
         {
             "caption": "A caption",
-            "image": "images/1.jpg"
-        },
-        {
-            "caption": "A caption",
-            "image": "images/1.jpg"
-        },
-        {
-            "caption": "A caption",
-            "image": "images/1.jpg"
+            "image": "images/4.png"
         }
     ]
 }
