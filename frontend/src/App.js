@@ -68,7 +68,7 @@ function App() {
     <ChakraProvider>
       <Router>
         <Header>
-            <div className='bg-[#C6EFF1] p-2 rounded-full'>Connect wallet</div>
+            <div className='bg-[#C6EFF1] p-2 rounded-full'>0xd...24BD</div>
               
         </Header>
         <div className="bg-[#C6EFF1] min-h-screen">
