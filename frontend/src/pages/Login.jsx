@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
-import axios from 'axios'; 
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { Route } from 'react-router-dom';
 
 export default function Login({ handleLogin }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+
+    // Get the history object
+    const navigate = useNavigate();
 
     const handleButtonClick = async () => {
         try {
@@ -15,8 +20,8 @@ export default function Login({ handleLogin }) {
 
             // Assuming your backend responds with some kind of success indicator
             if (response.data.success) {
-                // Redirect the user or perform other actions for successful login
-                console.log('Login successful');
+                // Redirect the user to the dashboard component
+                navigate('/dashboard');
             } else {
                 setError('Invalid email or password'); // Set an error message for unsuccessful login
             }
@@ -30,7 +35,7 @@ export default function Login({ handleLogin }) {
             }
             setError('An error occurred during login');
         }
-        
+
         handleLogin();
     };
 
