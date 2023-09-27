@@ -8,13 +8,13 @@ contract NFT is ERC721, Ownable {
 
     constructor() ERC721("certificate", "CERT") {}
 
-    function mint(string memory _tokenURI, address _user, uint256 _tokenId)
-        external
-        onlyOwner
-    {
-        _mint(_user, _tokenId);
-        tokenURIs[_tokenId] = _tokenURI;
-    }
+    function mint(string memory _tokenURI, address _recipient, uint256 _tokenId)
+    external
+    onlyOwner
+{
+    _mint(_recipient, _tokenId);
+    tokenURIs[_tokenId] = _tokenURI;
+}
 
     function getTokenURI(uint256 _tokenId)
         external

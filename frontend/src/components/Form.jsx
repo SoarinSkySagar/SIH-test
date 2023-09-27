@@ -7,6 +7,7 @@ import { ethers } from 'ethers'; // Import ethers from 'ethers'
 const Form = () => {
   const [nftContract, setNFTContract] = useState(null);
   const [account, setAccount] = useState('');
+  const [recipientAddress, setRecipientAddress] = useState('');
 
   useEffect(() => {
     async function loadBlockchainData() {
@@ -15,7 +16,7 @@ const Form = () => {
           const provider = new ethers.providers.Web3Provider(window.ethereum);
           const signer = provider.getSigner();
     
-          const contractAddress = '0xd0cF5bBD3392566356c20dd4dd0A0DD2D1dC24BD';
+          const contractAddress = '0x2882A02f4B162EEA16Ff395b97Fc8188eE04Bcff';
           const contract = new ethers.Contract(contractAddress, NFTContract, signer);
     
           // Check if the contract is properly initialized
@@ -41,18 +42,16 @@ const Form = () => {
     loadBlockchainData();
   }, []);
 
-  const handleMintNFT = async (tokenURI) => {
+  const handleMintNFT = async (tokenURI, recipient) => {
     try {
       // Check if nftContract is null
       if (!nftContract) {
         console.error('NFT contract is not initialized.');
         return;
       }
-      const tokenURI = 'https://example.com/nft-metadata.json'; // Replace with your metadata URL
-      const tokenId = 1;
   
-      // Call the mint function on your contract
-      const tx = await nftContract.mint(tokenURI, 0xd0cF5bBD3392566356c20dd4dd0A0DD2D1dC24BD, tokenId);
+      // Call the mint function on your contract with the recipient's address
+      const tx = await nftContract.mint(tokenURI, "0x2882A02f4B162EEA16Ff395b97Fc8188eE04Bcff", 1);
   
       // Wait for the transaction to be mined
       await tx.wait();
@@ -76,10 +75,14 @@ const Form = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    if (name === 'recipientAddress') {
+      setRecipientAddress(value);
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   const issueCertificate = async () => {
@@ -100,21 +103,21 @@ const Form = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
       // Create a JSON object with user data
       const userData = {
         name: formData.name,
         orgname: formData.orgname,
         address: formData.address,
-        message: formData.message
+        message: formData.message,
       };
-
+  
       // Convert the user data to a JSON string
       const userDataJSON = JSON.stringify(userData);
-
-      // Call the handleMintNFT function with userDataJSON as tokenURI
-      //handleMintNFT(userDataJSON);
+  
+      // Call the handleMintNFT function with userDataJSON and recipientAddress
+      handleMintNFT(userDataJSON, recipientAddress);
     } catch (error) {
       // Handle any errors that occur during the request
       console.error('Error:', error);
