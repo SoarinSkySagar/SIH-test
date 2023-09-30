@@ -61,20 +61,34 @@ function App() {
       }
   }, []);
 
+const formatAddress = (address) => {
+  if (address && address.length === 42) {
+    // Split the address into parts
+    const firstPart = address.substring(0, 3);
+    const lastPart = address.substring(39);
+
+    // Create the formatted address
+    const formattedAddress = `${firstPart}...${lastPart}`;
+
+    return formattedAddress;
+  }
+  return address;
+};
+
   const handleLogin = () => {
     setIsLoggedIn(true);
   };
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   return (
     <ChakraProvider>
       <Router>
         <Header>
-            <div className='bg-[#C6EFF1] p-2 rounded-full'>0xd...24BD</div>
+            {accounts && <div className='bg-[#C6EFF1] p-2 rounded-full'>{formatAddress(accounts)}</div>}
               
         </Header>
-        <div className="bg-[#C6EFF1] min-h-screen">
+        <div className="bg-gradient-to-br from-cyan-200 via-pink-100 to-blue-300 min-h-screen">
           <Routes>
             {isLoggedIn ? (
               <>

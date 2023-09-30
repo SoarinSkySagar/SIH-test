@@ -4,7 +4,7 @@ import video from '../img/video.mp4';
 
 const DashHeader = () => {
   return (
-    <div className=''>
+    <div >
       <div className='welcome'>
         <h1>Welcome, User </h1>
         <br></br>
@@ -15,7 +15,6 @@ const DashHeader = () => {
         <div className='info'>
           <h1>Info about Block-Certify</h1>
           <div className='video'>
-            {/* Add the `autoPlay` attribute to make the video play automatically */}
             <video src={video} autoPlay></video>
           </div>
         </div>

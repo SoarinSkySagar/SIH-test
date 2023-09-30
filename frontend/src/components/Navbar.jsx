@@ -17,7 +17,7 @@ export default function Navbar({children}) {
 
 
     return (
-        <div className='bg-white border-b shadow-sm sticky top-0 z-50'>
+        <div className='bg-cyan-100 border-b shadow-sm sticky top-0 z-50'>
             <header className='flex justify-between items-center px-3 mx-auto max-w-full'>
             <div>
                 <img src={DemoLogo} alt="logo" className='h-5 cursor-pointer' onClick={() => nav("/")} />
