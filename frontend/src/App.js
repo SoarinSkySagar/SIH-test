@@ -79,7 +79,7 @@ const formatAddress = (address) => {
     setIsLoggedIn(true);
   };
 
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
     <ChakraProvider>
@@ -88,7 +88,7 @@ const formatAddress = (address) => {
             {accounts && <div className='bg-[#C6EFF1] p-2 rounded-full'>{formatAddress(accounts)}</div>}
               
         </Header>
-        <div className="bg-gradient-to-br from-cyan-200 via-pink-100 to-blue-300 min-h-screen">
+        <div className="bg-gradient-to-br from-cyan-500 via-pink-100 to-blue-200 min-h-screen">
           <Routes>
             {isLoggedIn ? (
               <>
